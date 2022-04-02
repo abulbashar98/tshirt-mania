@@ -1,0 +1,10 @@
+.t-shirt {
+    height: 500px;
+    width: 250px;
+    margin-bottom: 25px;
+}
+
+.t-shirt img {
+    width: 90%;
+    height: 350px;
+}
