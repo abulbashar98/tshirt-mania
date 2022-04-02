@@ -1,8 +1,15 @@
-nav a{
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    font-size: 1.3em;
+    margin-right: 15px;
     text-decoration: none;
     color: black;
-    margin-right: 20px;
 }
-nav a:hover{
+
+nav a:hover {
     color: orange;
 }
