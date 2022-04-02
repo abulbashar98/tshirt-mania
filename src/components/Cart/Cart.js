@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Cart = () => {
+const Cart = ({ cart, removeFromCart }) => {
     return (
         <div>
-            <h1>This is Cart</h1>
+            <h1>Total Items Selected: {cart.length}</h1>
+            {
+                cart.map(tShirt => <p>{tShirt.name}
+                    <button onClick={() => removeFromCart(tShirt)}>X</button>
+                </p>)
+            }
         </div>
     );
 };
