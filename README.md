@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Important Notes
+## Important Notes on Conditional Rendering...
 
 There are four ways of Conditional rendering.....
 
@@ -19,6 +19,31 @@ Based on required Number of Conditions we need to pick a way of Conditional rend
 1. Element variable in Conditions and Ternary Operators are used when there are more than 1 Condition to be fulfilled.... e.g(if this <btn1> else that <btn2>) or (this ? <btn1> : <btn2>)....
 
 2. Otherwise when rendering needs to be done on a single state of Condition we Can use shorthands....
+
+
+## Context Api..
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+### Steps of setting up A context api and Using it......
+
+
+1. We have create the context on the Component at the highest level of tree or More importantly where the function,variable,array,object, or even The  state exists that we want to send toa a child component inside.....
+
+2. First we have to create Context outside the component function....  Purely because we have to export it to get using import from our desired component... 
+e.g( export const NameContext = React.createContext({default value}))
+
+3. {name} can be anything.....
+
+4. Then we have to wrap the Components we want to send data into inside A React Component..... Likewise we wrapped <APP> with <BrowserRouter> in index.js for routing setup....
+e.g(<NameContext.Provider value={anything}> {<childComponents>} </NameContext.Provider>)
+
+5. In (<NameContext.Provider value={}>) value is the the property where we send the data we want to send, it can be hardCoded('anything'), or it can be a variable we declared before({ornament}), or can be a state we declared using useState(), ({house})...... can be a function, an Array an Object, anything hardCoded or dynamic.....
+
+6. Now to receive the data anywhere inside the tree...  We can use a Hook.... useContext(name)...name the Context inside the hook...... and assign whatever we have received in a variable....
+e.g(const variable = useContext(name))
+
+
 
 
 

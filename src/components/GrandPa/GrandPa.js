@@ -4,6 +4,11 @@ import Aunty from '../Aunty/Aunty';
 import Father from '../Father/Father';
 import Uncle from '../Uncle/Uncle';
 
+
+export const RingContext = React.createContext('ring')
+
+
+
 const GrandPa = () => {
 
     const [house, setHouse] = useState(1)
@@ -13,21 +18,29 @@ const GrandPa = () => {
         setHouse(newHouseCount);
     }
 
-    const gift = 'Diamond Ring'
+    const gift = 'Diamond Ring';
+
+    const ornament = 'Patar Ring';
 
 
     return (
-        <div className='grandpa'>
-            <h1>Grandpa</h1>
-            <p>House: {house}
-                <button onClick={handleBuyAHouse} style={{ marginLeft: '15px' }}>Buy A house</button>
-            </p>
-            <div style={{ display: 'flex' }}>
-                <Father house={house} gift={gift}></Father>
-                <Uncle house={house}></Uncle>
-                <Aunty house={house}></Aunty>
-            </div>
-        </div >
+
+        <RingContext.Provider value={ornament}>
+
+            <div className='grandpa'>
+                <h1>Grandpa</h1>
+                <p>House: {house}
+                    <button onClick={handleBuyAHouse} style={{ marginLeft: '15px' }}>Buy A house</button>
+                </p>
+                <div style={{ display: 'flex' }}>
+                    <Father house={house} gift={gift}></Father>
+                    <Uncle house={house}></Uncle>
+                    <Aunty house={house}></Aunty>
+                </div>
+            </div >
+
+        </RingContext.Provider>
+
 
     );
 };

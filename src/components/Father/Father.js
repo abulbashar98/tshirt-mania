@@ -8,9 +8,11 @@ const Father = ({ house, gift }) => {
         <div>
             <h4>Father</h4>
             <p>House: {house}</p>
-            <MySelf house={house} gift={gift}></MySelf>
-            <Brother house={house}></Brother>
-            <Sister house={house}></Sister>
+            <div style={{ display: 'flex' }}>
+                <MySelf house={house} gift={gift}></MySelf>
+                <Brother house={house}></Brother>
+                <Sister house={house}></Sister>
+            </div>
         </div>
     );
 };
