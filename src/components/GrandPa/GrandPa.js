@@ -6,6 +6,7 @@ import Uncle from '../Uncle/Uncle';
 
 
 export const RingContext = React.createContext('ring')
+export const HouseContext = React.createContext('house')
 
 
 
@@ -33,9 +34,11 @@ const GrandPa = () => {
                     <button onClick={handleBuyAHouse} style={{ marginLeft: '15px' }}>Buy A house</button>
                 </p>
                 <div style={{ display: 'flex' }}>
-                    <Father house={house} gift={gift}></Father>
-                    <Uncle house={house}></Uncle>
-                    <Aunty house={house}></Aunty>
+                    <HouseContext.Provider value={[house, setHouse]}>
+                        <Father house={house} gift={gift}></Father>
+                        <Uncle house={house}></Uncle>
+                        <Aunty house={house}></Aunty>
+                    </HouseContext.Provider>
                 </div>
             </div >
 
