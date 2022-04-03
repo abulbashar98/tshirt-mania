@@ -53,6 +53,13 @@ e.g(const [state, setState] = useContext(ContextName))...
 
 
 
+### Netlify page reload 404 problem solve
+ 
+1. Create a file named: _redirects in Public folder..
+2. write: (/* /index.html 200) in _redirects file.... 
+
+
+
 
 
 
